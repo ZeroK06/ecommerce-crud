@@ -1,69 +1,121 @@
 {% extends "./layout/default.html" %} {% block title %} Home {% endblock title
-%} {% block body %}
+%} {% block navMain %}
+<section class="d-flex" style="height: calc(100vh - 100px)">
+  <div class="hero__main container">
+    <div>
+      <h1 class="text-start f-bold">
+        Estilo es usar lo que te hace sentir bien.
+      </h1>
+      <p>No vendemos ropa, vendemos armaduras para conquistar al mundo.</p>
+      <a href="#" class="btn btn-primary">Explorar ahora!</a>
+    </div>
+    <div>
+      <img
+        class="img-fluid"
+        src="{{url_for('static',filename='assets/girl.png')}}"
+      />
+    </div>
+  </div>
+</section>
+{% endblock %} {% block body %}
 <main class="main">
-    <section class="container-sm my-5">
-        <div class="d-flex justify-content-between pb-5">
-            <h3>Novedades</h3>
-            <a href="#" class="link">Ver todos los productos</a>
-        </div>
-        <div class="row row-cols-4 gap-2">
-            <div class="col bg-white">
-                <div class="card">
-                    <img src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-                        class="card-img-top" alt="data" />
-                    <div class="card-body">
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-primary w-full"><i class="bi bi-bag-check"></i></i></a>
-                        </div>
-                    </div>
-                </div>
+  <section class="container-main my-5">
+    <div class="d-flex justify-content-between pb-5">
+      <h3>Novedades</h3>
+      <a href="#" class="link">Ver todos los productos</a>
+    </div>
+    <div class="main__grid">
+      <div class="bg-white">
+        <a href="#" class="text-decoration-none">
+          <div class="card">
+            <img
+              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
+              class="card-img-top"
+              alt="data"
+            />
+            <div class="card-body">
+              <h4>Polo a cuadros</h4>
+              <p>$599</p>
             </div>
-            <div class="col bg-white">
-                <div class="card">
-                    <img src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-                        class="card-img-top" alt="data" />
-                    <div class="card-body">
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-primary w-full"><i class="bi bi-bag-check"></i></i></a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </a>
+      </div>
+      <div class="bg-white">
+        <a href="#" class="text-decoration-none">
+          <div class="card">
+            <img
+              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
+              class="card-img-top"
+              alt="data"
+            />
+            <div class="card-body">
+              <h4>Polo a cuadros</h4>
+              <p>$599</p>
             </div>
-            <div class="col bg-white">
-                <div class="card">
-                    <img src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-                        class="card-img-top" alt="data" />
-                    <div class="card-body">
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-primary w-full"><i class="bi bi-bag-check"></i></i></a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </a>
+      </div>
+      <div class="bg-white">
+        <a href="#" class="text-decoration-none">
+          <div class="card">
+            <img
+              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
+              class="card-img-top"
+              alt="data"
+            />
+            <div class="card-body">
+              <h4>Polo a cuadros</h4>
+              <p>$599</p>
             </div>
-            <div class="col bg-white">
-                <div class="card">
-                    <img src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-                        class="card-img-top" alt="data" />
-                    <div class="card-body">
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-primary w-full"><i class="bi bi-bag-check"></i></i></a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </a>
+      </div>
+      <div class="bg-white">
+        <a href="#" class="text-decoration-none">
+          <div class="card">
+            <img
+              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
+              class="card-img-top"
+              alt="data"
+            />
+            <div class="card-body">
+              <h4>Polo a cuadros</h4>
+              <p>$599</p>
             </div>
-            <div class="col bg-white">
-                <div class="card">
-                    <img src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-                        class="card-img-top" alt="data" />
-                    <div class="card-body">
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-primary w-full"><i class="bi bi-bag-check"></i></i></a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </a>
+      </div>
+      <div class="bg-white">
+        <a href="#" class="text-decoration-none">
+          <div class="card">
+            <img
+              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
+              class="card-img-top"
+              alt="data"
+            />
+            <div class="card-body">
+              <h4>Polo a cuadros</h4>
+              <p>$599</p>
             </div>
-        </div>
-        
-    </section>
+          </div>
+        </a>
+      </div>
+      <div class="bg-white">
+        <a href="#" class="text-decoration-none">
+          <div class="card">
+            <img
+              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
+              class="card-img-top"
+              alt="data"
+            />
+            <div class="card-body">
+              <h4>Polo a cuadros</h4>
+              <p>$599</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
 {% endblock %}

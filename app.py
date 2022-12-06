@@ -12,6 +12,10 @@ def search():
         return "Post"
     return render_template("/layout/search.html")
         
+
+@app.route("/product/<string:id>")
+def product(id):
+    return render_template("/layout/productView.html")
     
 
 app.run(port=3000,debug=True)

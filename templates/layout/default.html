@@ -20,7 +20,7 @@
   />
 
   <body>
-    <header class="hero" style="height: 100vh; background: #f0f0f1">
+    <header class="hero" style="max-height: 100vh; background: #f0f0f1">
       <nav class="navbar navbar-expand-lg bg-transparent">
         <div class="container-fluid mx-5">
           <a class="navbar-brand" href="/">MODA</a>
@@ -88,25 +88,7 @@
           </div>
         </div>
       </nav>
-      <section class="d-flex" style="height: calc(100vh - 100px)">
-        <div class="hero__main container">
-          <div>
-            <h1 class="text-start f-bold">
-              Estilo es usar lo que te hace sentir bien.
-            </h1>
-            <p>
-              No vendemos ropa, vendemos armaduras para conquistar al mundo.
-            </p>
-            <a href="#" class="btn btn-primary">Explorar ahora!</a>
-          </div>
-          <div>
-            <img
-              class="img-fluid"
-              src="{{url_for('static',filename='assets/girl.png')}}"
-            />
-          </div>
-        </div>
-      </section>
+      {% block navMain %} {% endblock %}
     </header>
     {% block body %} {% endblock %}
     <script

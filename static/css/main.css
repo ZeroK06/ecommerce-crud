@@ -2,9 +2,23 @@
   width: 90%;
   margin: 0 auto;
 }
+.container-main {
+  width: 75%;
+  margin: 0 auto;
+}
 .hero__main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-items: center;
+}
+.main__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+.main__grid-col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
 }
