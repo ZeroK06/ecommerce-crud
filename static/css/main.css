@@ -1,0 +1,10 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.hero__main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
