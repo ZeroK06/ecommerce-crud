@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, make_response
 import mysql.connector
 
 def conection ():
-    database = mysql.connector.connect(host="localhost", user="root", password="",database="moda")
+    database = mysql.connector.connect(host="localhost", user="root", password="",database="moda",port="3306")
     return database
 
 
@@ -38,14 +38,47 @@ def product(id):
     cursor.execute("SELECT * FROM product WHERE id = {}".format(id))
     return render_template("/layout/productView.html",product=cursor)
     
+@app.route("/cms-admin/login",methods=['POST', 'GET'])
+def login():
+    email = request.args.get("email")
+    password = request.args.get("password")
+    conetionDB = conection()
+    cursor = conetionDB.cursor()
+    cursor.execute("SELECT * FROM usuario WHERE email = '{}' AND hashPassword = '{}'".format(email.lower(), password.lower()))
+    exist = cursor.fetchone()
+    if exist:
+        response =  make_response(redirect("/cms-admin",200))
+        response.set_cookie("token",str(exist[0]))
+    else:
+        response =  make_response("fail login", 401)
+    return response
+        
+    
 @app.route("/cms-admin")
 def admin():
 
     isAdmin = request.cookies.get("token")
     if isAdmin:
-        return render_template("/layout/dashboard.html")
+        conetionDB = conection()
+        cursor = conetionDB.cursor()
+        cursor.execute("SELECT * FROM usuario WHERE id = {}".format(isAdmin))
+        data = cursor.fetchone()
+        cursor.execute("SELECT * FROM product LIMIT 50")
+
+        return render_template("/layout/dashboard.html",profile=data, products= cursor)
     else:
         return render_template("/layout/login.html")
 
+
+@app.route("/cms-admin/products")
+def dashBoardProducts():
+    isAdmin = request.cookies.get("token")
+    if isAdmin:
+        conetionDB = conection()
+        cursor = conetionDB.cursor()
+        cursor.execute("SELECT * FROM product LIMIT 50")
+        return render_template("/layout/dashBoardProducts.html", products=cursor)
+    else:
+        return render_template("/layout/login.html")
 
 app.run(port=3000,debug=True)
