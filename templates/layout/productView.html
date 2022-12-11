@@ -1,16 +1,36 @@
-{% extends 'layout/default.html' %}{% block title %}Buscar - {{nameSearch}}
+{% extends 'layout/default.html' %}{% block title %}Buscar{{nameSearch}}
 {%endblock title %} {% block body %}
 <div class="container-main my-4">
   <h1>Product</h1>
+  {% for item in product %}
   <div class="main__product">
     <div class="product__features">
-      <h2>Handloom Pochampally Woven Ikat Cotton Dupatta</h2>
-      <p>Women</p>
-      <p>Color: beige</p>
-      <p>$ 2399</p>
-      <form action="" method="get"></form>
+      <h2>{{item[1]}}</h2>
+      <p>{{item[4]}}</p>
+      <p>Color: {{item[5]}}</p>
+      <p>Fabricante: {{item[7]}}</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vel dicta
+        culpa ipsam non recusandae molestias voluptate ratione tenetur ducimus
+        quidem dolor expedita eaque, maiores dolore quisquam est dolorem saepe
+        fugiat! Tempora fugit, illum explicabo rerum asperiores ipsam cum magni.
+      </p>
+      <p class="text-decoration-line-through">$ {{item[3]}}</p>
+      <p>$ {{item[8]}}</p>
+      <button class="btn btn-primary" id="btn-send-message">
+        Consultar con asesor
+      </button>
     </div>
-    <div class="product__view"></div>
+    <div class="product__view">
+      <img
+        class="view__product"
+        src="{{item[6]}}"
+        data-aos="fade-up"
+        alt="ropa"
+      />
+    </div>
   </div>
+  {% endfor %}
 </div>
+<script src="{{ url_for('static',filename='js/main.js' ) }}"></script>
 {% endblock %}

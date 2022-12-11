@@ -1,12 +1,17 @@
 {% extends "./layout/default.html" %} {% block title %} Home {% endblock title
 %} {% block navMain %}
+
 <section class="d-flex" style="height: calc(100vh - 100px)">
   <div class="hero__main container">
     <div>
-      <h1 class="text-start f-bold">
+      <h1 class="text-start f-bold" style="font-size: 3rem">
         Estilo es usar lo que te hace sentir bien.
       </h1>
-      <p>No vendemos ropa, vendemos armaduras para conquistar al mundo.</p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero beatae
+        iste ea vitae dignissimos, ducimus qui est perspiciatis facilis?
+        Exercitationem modi cumque vel maiores fugiat?
+      </p>
       <a href="#" class="btn btn-primary">Explorar ahora!</a>
     </div>
     <div>
@@ -25,96 +30,24 @@
       <a href="#" class="link">Ver todos los productos</a>
     </div>
     <div class="main__grid">
-      <div class="bg-white">
-        <a href="#" class="text-decoration-none">
-          <div class="card">
-            <img
-              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-              class="card-img-top"
-              alt="data"
-            />
-            <div class="card-body">
-              <h4>Polo a cuadros</h4>
-              <p>$599</p>
-            </div>
+      {% for item in products %}
+
+      <a
+        href="product/{{item[0]}}"
+        class="text-decoration-none shadow-sm position-relative"
+        style="width: 20rem"
+        data-aos="fade-up"
+      >
+        <div class="card">
+          <img src="{{item[6]}}" class="card-img-top" alt="data" />
+          <div class="card-body">
+            <h4>{{item[1]}}</h4>
+            <p class="text-decoration-line-through">$ {{item[3]}}</p>
+            <p>$ {{item[8]}}</p>
           </div>
-        </a>
-      </div>
-      <div class="bg-white">
-        <a href="#" class="text-decoration-none">
-          <div class="card">
-            <img
-              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-              class="card-img-top"
-              alt="data"
-            />
-            <div class="card-body">
-              <h4>Polo a cuadros</h4>
-              <p>$599</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="bg-white">
-        <a href="#" class="text-decoration-none">
-          <div class="card">
-            <img
-              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-              class="card-img-top"
-              alt="data"
-            />
-            <div class="card-body">
-              <h4>Polo a cuadros</h4>
-              <p>$599</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="bg-white">
-        <a href="#" class="text-decoration-none">
-          <div class="card">
-            <img
-              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-              class="card-img-top"
-              alt="data"
-            />
-            <div class="card-body">
-              <h4>Polo a cuadros</h4>
-              <p>$599</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="bg-white">
-        <a href="#" class="text-decoration-none">
-          <div class="card">
-            <img
-              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-              class="card-img-top"
-              alt="data"
-            />
-            <div class="card-body">
-              <h4>Polo a cuadros</h4>
-              <p>$599</p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="bg-white">
-        <a href="#" class="text-decoration-none">
-          <div class="card">
-            <img
-              src="https://assets.ajio.com/medias/sys_master/root/20220309/inTn/6227b81faeb26921afcde577/-286Wx359H-441137362-white-MODEL.jpg"
-              class="card-img-top"
-              alt="data"
-            />
-            <div class="card-body">
-              <h4>Polo a cuadros</h4>
-              <p>$599</p>
-            </div>
-          </div>
-        </a>
-      </div>
+        </div>
+      </a>
+      {% endfor %}
     </div>
   </section>
 </main>

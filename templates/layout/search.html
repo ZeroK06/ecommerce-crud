@@ -1,32 +1,46 @@
-{% extends "layout/default.html" %} {% block title %}Buscar - {{nameSearch}}
+{% extends "layout/default.html" %} {% block title %}Buscar{{nameSearch}}
 {%endblock title %} {% block body %}
 <main class="main container-main py-4">
   <section class="container-sm"><h3 class="mb-4">Resultados</h3></section>
   <div class="main__grid-col-2">
-    <a href="/product/id" class="text-decoration-none">
+    {% if products %} {% for item in products %}
+    <a
+      href="/product/{{item[0]}}"
+      data-aos="fade-up"
+      data-aos-delay="300"
+      class="text-decoration-none position-relative"
+    >
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-4">
             <img
-              src="https://assets.ajio.com/medias/sys_master/root/20220601/ycPr/629751bcaeb26921af04c684/-286Wx359H-441277053-beige-MODEL.jpg"
+              src="{{item[6]}}"
               class="img-fluid"
               alt="Printed Straight Kurta"
             />
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">Printed Straight Kurta</h5>
+              <h5 class="card-title">{{item[1]}}</h5>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
               </p>
-              <p class="card-text"><small class="text-muted">$2.300</small></p>
+              <p class="card-text text-decoration-line-through">
+                <small class="text-muted">$ {{item[3]}}</small>
+              </p>
+              <p class="card-text">
+                <small class="text-muted">$ {{item[8]}}</small>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </a>
+    {% endfor %} {% else %}
+    <h1 class="text-align-center">No se encontro resultados.</h1>
+    {% endif %}
   </div>
 </main>
 {% endblock body %}
