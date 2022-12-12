@@ -1,0 +1,98 @@
+{% extends './layout/defaultDashBoard.html' %} {% block bodyDashboard %}
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <h1 class="my-4">Agregar nuevo producto</h1>
+  <div class="m-auto w-80">
+    <form action="/cms-admin/product/add" method="post">
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">Nombre</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          name="nombre"
+        />
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">Descripcion</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          name="desc"
+        />
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">Color</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          name="color"
+        />
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">Marca</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          name="marca"
+        />
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">URL de imagen</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          name="url"
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <span class="input-group-text">Precio normal</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Dollar amount (with dot and two decimal places)"
+          name="originalPrice"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <span class="input-group-text">Precio oferta</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Dollar amount (with dot and two decimal places)"
+          name="discountPrice"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01"
+          >Categoria</label
+        >
+        <select class="form-select" id="inputGroupSelect01" required name="categoria">
+          <option selected>Choose...</option>
+          <option value="1">Varon</option>
+          <option value="2">Mujer</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Añadir</button>
+    </form>
+  </div>
+</main>
+{% endblock %}

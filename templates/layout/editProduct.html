@@ -1,0 +1,83 @@
+{% extends './layout/defaultDashBoard.html' %} {% block bodyDashboard %}
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <h1 class="my-4">Editar</h1>
+  <div class="m-auto w-80">
+    <form action="/cms-admin/product/edit/{{infoProduct[0]}}" method="post">
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">Nombre</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          value="{{infoProduct[1]}}"
+          name="nombre"
+        />
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">Descripcion</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          value="{{infoProduct[2]}}"
+          name="desc"
+        />
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">Color</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          value="{{infoProduct[5]}}"
+          name="color"
+        />
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">Marca</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          value="{{infoProduct[7]}}"
+          name="marca"
+        />
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">URL de imagen</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Nombre"
+          aria-describedby="addon-wrapping"
+          required
+          value="{{infoProduct[6]}}"
+          name="url"
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <span class="input-group-text">0.00</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Dollar amount (with dot and two decimal places)"
+          value="{{infoProduct[3]}}"
+          name="price"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Terminar</button>
+    </form>
+  </div>
+</main>
+{% endblock %}
